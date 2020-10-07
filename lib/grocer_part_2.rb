@@ -49,11 +49,10 @@ def checkout(cart, coupons)
     total << item[:price] * item[:count]
   end
   
-  if total.sum > 100
-    return total.sum - (total.sum * 0.1)
-  else
-    total.sum
-  end
+  total.sum > 100 ? (total.sum - (total.sum * 0.1)) : total.sum
+  # else
+  #   total.sum
+  # end
 end
 
 
