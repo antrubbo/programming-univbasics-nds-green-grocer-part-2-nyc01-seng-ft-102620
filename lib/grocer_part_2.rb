@@ -40,7 +40,6 @@ end
 
 def checkout(cart, coupons)
   total = []
-
   new_cart = consolidate_cart(cart)
   new_cart_with_coupons = apply_coupons(new_cart, coupons)
   new_cart_with_coupons_and_clearance = apply_clearance(new_cart_with_coupons)
@@ -50,9 +49,6 @@ def checkout(cart, coupons)
   end
   
   total.sum > 100 ? (total.sum - (total.sum * 0.1)) : total.sum
-  # else
-  #   total.sum
-  # end
 end
 
 
