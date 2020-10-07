@@ -48,8 +48,24 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
+  total = []
+
   new_cart = consolidate_cart(cart)
   new_cart_with_coupons = apply_coupons(new_cart, coupons)
   new_cart_with_coupons_and_clearance = apply_clearance(new_cart_with_coupons)
-  binding.pry
+  
+  new_cart_with_coupons_and_clearance.each do |item|
+    total << item[:price] * item[:count]
+  end
+  
+  total.sum
 end
+
+
+
+
+
+
+
+
+
