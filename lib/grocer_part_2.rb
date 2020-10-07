@@ -49,5 +49,7 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   new_cart = consolidate_cart(cart)
+  new_cart_with_coupons = apply_coupons(new_cart, coupons)
+  new_cart_with_coupons_and_clearance = apply_clearance(new_cart_with_coupons_and_clearance)
   
 end
